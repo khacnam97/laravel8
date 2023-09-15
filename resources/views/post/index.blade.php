@@ -11,7 +11,7 @@
                     <tr>
                         <th class="text-center">{{ __('post.Name') }}</th>
                         <th class="text-center">{{ __('post.description') }}</th>
-{{--                        <th style="min-width: 200px"></th>--}}
+                        <th style="min-width: 200px"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -19,6 +19,12 @@
                         <tr>
                             <td>{!! $post['title'] !!}</td>
                             <td>{!! $post['description'] !!}</td>
+                            <td>
+                                <a class="btn btn-primary btn-sm" href="{{ route('post.edit', $post['id']) }}" >Edit</a>
+                                <button type="button" class="btn-danger" >
+                                    <a href="{{route('post.delete', $post->id)}}" style="color: white;text-decoration: none;" onclick="return confirm ('bạn có muốn xóa post {{$post->title}}')">Delete</a>
+                                </button>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>

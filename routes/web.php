@@ -22,6 +22,9 @@ Route::get('/', function () {
 Route::get('index', [HomeController::class, 'index'])->name('page');
 
 Route::get('create', [PostController::class, 'create'])->name('post.create');
-Route::post('store-form', [PostController::class, 'store']);
+Route::get('edit/{id}', [PostController::class, 'edit'])->name('post.edit');
+Route::post('store-form', [PostController::class, 'store'])->name('post.store');
+Route::post('edit-store/{id}', [PostController::class, 'storeEdit'])->name('post.store.edit');
+Route::get('delete/{id}', [PostController::class, 'delete'])->name('post.delete');
 
 Route::get('post/index', [PostController::class, 'index'])->name('post.index');
