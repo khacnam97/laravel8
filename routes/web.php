@@ -21,5 +21,7 @@ Route::get('/', function () {
 
 Route::get('index', [HomeController::class, 'index'])->name('page');
 
-Route::get('add-blog-post-form', [PostController::class, 'index']);
+Route::get('create', [PostController::class, 'create'])->name('post.create');
 Route::post('store-form', [PostController::class, 'store']);
+
+Route::get('post/index', [PostController::class, 'index'])->name('post.index');
